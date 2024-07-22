@@ -2,20 +2,23 @@
   /*font*/
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings: "slnt" 0;
 
+  --font-h1: 35px;
+  --font-h2: 28px;
   /*color*/
   --color-gray-50: #fafafa;
   --color-gray-700: #4a5568;
+  --color-gray-900: #1a202c;
   --color-primary-bg: #57007b;
 
   /*init setting*/
   color: var(--color-gray-700);
 }
 /*header*/
-header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -41,27 +44,24 @@ header {
   height는 vh가 아닌 픽셀이나 헤더가 가지는 컨텐츠의 양에 따라 바뀌도록 해야 한다.
   */
 }
-header > h1 {
+.header > h1 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-header > nav > ul {
+.header > nav > ul {
   display: flex;
   justify-content: space-between;
   color: var(--color-gray-700);
 }
-header > nav > ul > li {
+.header > nav > ul > li {
   margin-right: 48px;
 }
-header > nav > ul > li:last-child {
+.header > nav > ul > li:last-child {
   margin-right: 0;
 }
-header > button {
-  /* px로 고정해도 되는지 고민됩니다. */
-  width: 124px;
-  height: 42px;
-
+.header > button {
+  padding: 14px 25px;
   border-radius: 10px;
   border: none;
 
@@ -70,16 +70,54 @@ header > button {
 }
 
 @media (max-width: 1100px) {
-  header {
+  .header {
     justify-content: center;
   }
-  header > nav,
-  header > button {
+  .header > nav,
+  .header > button {
     display: none;
   }
 }
 
 /*main*/
-main > section:nth-of-type(1) {
+.main .section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 148px 104px 104px;
+}
+.main .section1 > section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.main .section1 h2 {
+  width: 50%;
+  font-size: var(--font-h1);
+  color: linear-gradient(to left bottom, #f76680, #57007b);
+}
+.main .section1 .black {
+  color: var(--color-gray-900);
+}
+.main .section1 .bold {
+  font-weight: 800;
+}
+.main .section1 button {
+  width: 30%;
+
+  padding: 19px 30px;
+  border-radius: 10px;
+  border: none;
+
+  color: var(--color-gray-50);
+  background-color: var(--color-primary-bg);
+}
+.main .section img {
+  width: 50%;
+}
+
+@media (max-width: 1100px) {
+  .main .section1 {
+    flex-direction: column;
+  }
 }
