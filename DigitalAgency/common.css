@@ -119,9 +119,10 @@
   width: 50%;
 }
 .main .section1 h2 {
-  width: 50%;
   font-size: var(--font-h1);
   background: linear-gradient(to left bottom, #f76680, #57007b);
+  background-clip: text;
+  color: transparent;
 }
 .main .section1 .black {
   color: var(--color-gray-900);
@@ -145,7 +146,7 @@
   background-color: var(--color-primary-bg);
 }
 .main .section1 img {
-  /* width: 50%; */
+  width: 50%;
 }
 .main .section1::before {
   position: absolute;
