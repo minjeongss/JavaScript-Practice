@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="myreset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="common.css" />
   </head>
   <body>
@@ -53,6 +57,47 @@
       </section>
       <section class="section2">
         <h2>Services we offer</h2>
+        <!-- swiper -->
+        <div class="swiper bannerCon">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./image/section2-1.png" alt="section2" />
+              <span>Mobile App Development</span>
+              <p>
+                A Website is an extension of yourself and we can help you to
+                express it properly. Your website is your number one marketing
+                asset because we live in a digital age.
+              </p>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/section2-2.png" alt="section2" />
+              <span>Web Design & Development</span>
+              <p>
+                A Website is an extension of yourself and we can help you to
+                express it properly. Your website is your number one marketing
+                asset because we live in a digital age.
+              </p>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/section2-3.png" alt="section2" />
+              <span>Software Testing Service</span>
+              <p>
+                A Website is an extension of yourself and we can help you to
+                express it properly. Your website is your number one marketing
+                asset because we live in a digital age.
+              </p>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/section2-2.png" alt="section2" />
+              <span>Software Testing Service</span>
+              <p>
+                A Website is an extension of yourself and we can help you to
+                express it properly. Your website is your number one marketing
+                asset because we live in a digital age.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="section3">
         <section>
@@ -71,5 +116,19 @@
         <video src="">비디오</video>
       </section>
     </main>
+
+    <!-- script part -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".bannerCon", {
+        //per view+per view auto
+        slidesPerView: "auto",
+        spaceBetween: 40,
+        //centered
+        centeredSlides: true,
+        //infinite loop
+        loop: true,
+      });
+    </script>
   </body>
 </html>
