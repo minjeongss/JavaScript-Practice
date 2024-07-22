@@ -9,6 +9,7 @@
   --font-h1: 35px;
   --font-h2: 28px;
   /*color*/
+  --color-white: #ffffff;
   --color-gray-50: #fafafa;
   --color-gray-700: #4a5568;
   --color-gray-900: #1a202c;
@@ -35,6 +36,9 @@
   padding-right: 40px;
   margin: 0 auto;
 
+  background-color: var(--color-white);
+
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
   /* 
   기존의 코드
   width: 1440px;
@@ -120,7 +124,8 @@
   font-weight: 800;
 }
 .main .section1 button {
-  width: 30%;
+  /* 반응형에서도 크기 변하지 않음 */
+  width: 175px;
 
   padding: 19px 30px;
   border-radius: 10px;
@@ -136,5 +141,9 @@
 @media (max-width: 1100px) {
   .main .section1 {
     flex-direction: column;
+  }
+  .main .section1 section,
+  .main .section img {
+    width: 80%;
   }
 }
