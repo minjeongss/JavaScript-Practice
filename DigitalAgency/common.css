@@ -121,7 +121,7 @@
 .main .section1 h2 {
   width: 50%;
   font-size: var(--font-h1);
-  color: linear-gradient(to left bottom, #f76680, #57007b);
+  background: linear-gradient(to left bottom, #f76680, #57007b);
 }
 .main .section1 .black {
   color: var(--color-gray-900);
@@ -185,6 +185,13 @@
 }
 .main .section3 h2 {
   font-size: var(--font-h2);
+}
+.main .section3 h2 > p:nth-of-type(2) {
+  font-weight: var(--font-bold);
+}
+.main .section3 > section > p {
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 .main .section3::before {
   position: absolute;
