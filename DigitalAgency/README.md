@@ -61,3 +61,11 @@ main > section:nth-of-type(1) {
   margin: 148px 104px 104px;
 }
 ```
+
+하지만 해당 방식은 이후의 코드를 작성하는 것에 있어 많은 제약 사항을 가지고 있어, 기존의 코드에 class를 모두 추가했다.
+
+```css
+.main .section1 {
+  margin: 148px 104px 104px;
+}
+```
