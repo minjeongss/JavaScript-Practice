@@ -9,6 +9,7 @@
   /*color*/
   --color-gray-50: #fafafa;
   --color-gray-700: #4a5568;
+  --color-primary-bg: #57007b;
 
   /*init setting*/
   color: var(--color-gray-700);
@@ -79,3 +80,6 @@ header > button {
 }
 
 /*main*/
+main > section:nth-of-type(1) {
+  margin: 148px 104px 104px;
+}
