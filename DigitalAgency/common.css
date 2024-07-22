@@ -15,6 +15,7 @@
   --color-gray-700: #4a5568;
   --color-gray-900: #1a202c;
   --color-primary-bg: #57007b;
+  --color-light-bg: #f9f9ff;
 
   /*init setting*/
   color: var(--color-gray-700);
@@ -104,10 +105,13 @@
 /*main*/
 /* section1 */
 .main .section1 {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 148px 104px 104px;
+
+  overflow: hidden;
 }
 .main .section1 > section {
   display: flex;
@@ -140,14 +144,25 @@
   color: var(--color-gray-50);
   background-color: var(--color-primary-bg);
 }
-.main .section img {
+.main .section1 img {
   width: 50%;
+}
+.main .section1::before {
+  position: absolute;
+  content: "";
+  background: linear-gradient(to left bottom, #f76680, #57007b);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  bottom: -36px;
+  left: 400px;
 }
 
 /* section2 */
 .main .section2 {
   display: flex;
   justify-content: center;
+  background-color: var(--color-light-bg);
 }
 .main .section2 h2 {
   font-size: var(--font-h2);
