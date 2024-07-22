@@ -123,6 +123,10 @@
 .main .section1 .bold {
   font-weight: 800;
 }
+.main .section1 p {
+  margin-top: 28px;
+  margin-bottom: 75px;
+}
 .main .section1 button {
   /* 반응형에서도 크기 변하지 않음 */
   width: 175px;
