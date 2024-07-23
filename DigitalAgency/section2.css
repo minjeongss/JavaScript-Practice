@@ -13,7 +13,7 @@
   background-color: var(--color-light-bg);
 }
 .main .section2 h2 {
-  position: relative;
+  /* position: relative; */
   font-size: var(--font-h2);
   font-weight: var(--font-bold);
   color: var(--color-gray-900);
@@ -21,13 +21,13 @@
 /* slider */
 /* 문제: 스크롤링하면 우측 카드 일부가 사라지는 현상 발생 */
 .swiper {
+  position: relative;
   width: 100%; /*지정을 해야 slider의 크기 확보 가능*/
   height: 100%;
   padding-bottom: 50px;
   overflow: hidden;
 }
 .bannerCon .swiper-wrapper {
-  position: relative; /*pg1의 기준*/
 }
 .bannerCon .swiper-slide {
   display: flex;
@@ -42,7 +42,7 @@
 
   padding: 10px;
   background-color: var(--color-gray-50);
-  /* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .bannerCon .swiper-slide img {
   width: 34px;
@@ -64,7 +64,10 @@
 }
 /* pagination */
 /* 문제: 위치 고정되지 않음 */
-.swiper-pagination .pg1 {
+.bannerCon .pg1 {
   position: absolute;
-  bottom: -100px;
+  bottom: 10px; /* 위치를 하단에 고정 */
+  width: 100%; /* 너비를 100%로 설정 */
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
 }
