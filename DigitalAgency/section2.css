@@ -26,8 +26,10 @@
   padding-bottom: 50px;
   overflow: hidden;
 }
+.bannerCon .swiper-wrapper {
+  position: relative; /*pg1의 기준*/
+}
 .bannerCon .swiper-slide {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,10 +64,7 @@
 }
 /* pagination */
 /* 문제: 위치 고정되지 않음 */
-.swiper-pagination {
+.swiper-pagination .pg1 {
   position: absolute;
-  bottom: 100px; /* 원하는 위치로 조정 */
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
-  /* width: 100%; */
+  bottom: -100px;
 }
