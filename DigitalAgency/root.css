@@ -1,0 +1,26 @@
+:root {
+  /*font*/
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+
+  --font-h1: 35px;
+  --font-h2: 28px;
+  --font-h3: 20px;
+  --font-semi-bold: 600;
+  --font-bold: 800;
+  /*color*/
+  --color-white: #ffffff;
+  --color-gray-50: #fafafa;
+  --color-gray-700: #4a5568;
+  --color-gray-900: #1a202c;
+  --color-primary-bg: #57007b;
+  --color-light-bg: #f9f9ff;
+
+  /*init setting*/
+  color: var(--color-gray-700);
+  width: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,60 @@
+/* section1 */
+.main .section1 {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1440px;
+  margin: 0 auto;
+
+  padding: 148px 104px 104px;
+
+  overflow: hidden;
+}
+.main .section1 > section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.main .section1 h2 {
+  font-size: var(--font-h1);
+  background: linear-gradient(to left bottom, #f76680, #57007b);
+  background-clip: text;
+  color: transparent;
+}
+.main .section1 .black {
+  color: var(--color-gray-900);
+}
+.main .section1 .bold {
+  font-weight: var(--font-bold);
+}
+.main .section1 p {
+  margin-top: 28px;
+  margin-bottom: 75px;
+}
+.main .section1 button {
+  /* 반응형에서도 크기 변하지 않음 */
+  width: 175px;
+
+  padding: 19px 30px;
+  border-radius: 10px;
+  border: none;
+
+  color: var(--color-gray-50);
+  background-color: var(--color-primary-bg);
+}
+.main .section1 img {
+  width: 50%;
+  object-fit: cover;
+}
+.main .section1::before {
+  position: absolute;
+  content: "";
+  background: linear-gradient(to left bottom, #f76680, #57007b);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  bottom: -36px;
+  left: 400px;
+}
