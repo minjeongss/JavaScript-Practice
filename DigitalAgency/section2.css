@@ -4,24 +4,33 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  /*질문*/
+  /*내부 요소들의 간격을 띄울 때, gap 사용 VS margin 사용*/
   gap: 65px;
 
   padding: 148px 104px 104px;
   background-color: var(--color-light-bg);
 }
 .main .section2 h2 {
+  position: relative;
   font-size: var(--font-h2);
   font-weight: var(--font-bold);
   color: var(--color-gray-900);
 }
 /* slider */
-.bannerCon {
+.swiper {
   width: 100%; /*지정을 해야 slider의 크기 확보 가능*/
+  height: 100%;
+  padding-bottom: 50px;
+  overflow: hidden;
 }
 .bannerCon .swiper-slide {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   width: 30%;
 
@@ -45,4 +54,15 @@
   background: linear-gradient(to left bottom, #f76680, #57007b);
   background-clip: text;
   color: transparent;
+}
+.bannerCon .swiper-slide .swiper-slide-active {
+  background: red;
+}
+/* pagination */
+.swiper-pagination {
+  position: absolute;
+  bottom: 100px; /* 원하는 위치로 조정 */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  /* width: 100%; */
 }

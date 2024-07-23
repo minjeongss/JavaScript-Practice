@@ -1,0 +1,14 @@
+@media (max-width: 1100px) {
+  .main .section1 {
+    flex-direction: column;
+  }
+  .main .section1 section,
+  .main .section1 img,
+  .main .section3 section,
+  .main .section3 iframe {
+    width: 80%;
+  }
+  .main .section3 {
+    flex-direction: column;
+  }
+}

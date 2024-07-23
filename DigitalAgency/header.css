@@ -25,6 +25,9 @@
     height는 vh가 아닌 픽셀이나 헤더가 가지는 컨텐츠의 양에 따라 바뀌도록 해야 한다.
     */
 }
+/*질문*/
+/*헤더에만 class를 부여하고, 내부의 요소를 inline 태그로 접근하는 것이 올바른 방법인지 고민된다.*/
+/*헤더에만 class 부여하고, 내부의 요소 인라인 태그로 접근하기 VS 내부의 요소까지 class를 부여하기*/
 .header > h1 {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -42,7 +45,7 @@
 .header > nav > ul > li:last-child {
   margin-right: 0;
 }
-.header > nav > ul > li:hover {
+.header > nav > ul > li:hover a {
   color: var(--color-primary-bg);
 }
 .header > nav > ul > li:hover::before {
@@ -58,6 +61,8 @@
   bottom: -10px;
   left: 0;
 }
+/*질문*/
+/*버튼의 경우, px로 크기를 고정하는 것 VS %로 크기를 고정하지 않는 것.*/
 .header > button {
   padding: 14px 25px;
   border-radius: 10px;

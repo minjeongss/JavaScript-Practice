@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digital Agency</title>
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- css -->
     <link rel="stylesheet" href="myreset.css" />
     <link
       rel="stylesheet"
@@ -20,18 +30,20 @@
     <link rel="stylesheet" href="section1.css" />
     <link rel="stylesheet" href="section2.css" />
     <link rel="stylesheet" href="section3.css" />
+    <link rel="stylesheet" href="section4.css" />
+    <link rel="stylesheet" href="section-media.css" />
   </head>
   <body>
     <header class="header">
       <h1><img src="./image/logo.png" alt="logo" /></h1>
       <nav>
         <ul>
-          <li>About Us</li>
-          <li>Services</li>
-          <li>Case Studies</li>
-          <li>Blog</li>
-          <li>How it Works</li>
-          <li>Hire</li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">How it Works</a></li>
+          <li><a href="#">Hire</a></li>
         </ul>
       </nav>
       <button>Contact Us</button>
@@ -39,6 +51,8 @@
 
     <main class="main">
       <section class="section1">
+        <!-- 질문 -->
+        <!-- section>section, section>section>div보다 section>div, section>div>div가 더 통일성있어 적합한 방법인지 고민된다. -->
         <section>
           <h2>
             <div>
@@ -100,6 +114,16 @@
                 asset because we live in a digital age.
               </p>
             </div>
+            <div class="swiper-slide">
+              <img src="./image/section2-3.png" alt="section2" />
+              <span>Software Testing Service</span>
+              <p>
+                A Website is an extension of yourself and we can help you to
+                express it properly. Your website is your number one marketing
+                asset because we live in a digital age.
+              </p>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
@@ -109,15 +133,39 @@
             <p>Leading companies trust us</p>
             <p>to develop software</p>
           </h2>
-          <p>
-            We add development capacity to tech teams. Our value isn’t limited
-            to building teams but is equally distributed across the project
-            lifecycle. We are a custom software development company that
-            guarantees the successful delivery of your project.
-          </p>
-          <p>See more Informations</p>
+          <div>
+            <span>We</span>
+            <span>add development capacity</span>
+            <span
+              >to tech teams. Our value isn’t limited to building teams but is
+              equally distributed across the project lifecycle. We are a custom
+              software development company that guarantees the successful
+              delivery of your project.
+            </span>
+          </div>
+          <div>
+            <span>See more Informations</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
         </section>
-        <video src="">비디오</video>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/1mdfysGJpSg?si=XhTpD_evfHtP6E93"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section class="section4">
+        <!-- 질문 -->
+        <!-- h2내에 span 대신 p를 넣어도 괜찮은지 고민된다. -->
+        <h2>
+          <span>Meet the People</span>
+          <span>We are Working With</span>
+        </h2>
       </section>
     </main>
 
@@ -125,13 +173,17 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper(".bannerCon", {
-        //per view+per view auto
+        //per view
         slidesPerView: "auto",
-        spaceBetween: 40,
+        spaceBetween: 20,
         //centered
         centeredSlides: true,
         //infinite loop
         loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
       });
     </script>
   </body>
