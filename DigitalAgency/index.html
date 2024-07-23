@@ -173,25 +173,25 @@
         </div>
       </section>
       <section class="section4-banner">
-        <div class="swiper bannerCon">
+        <div class="swiper bannerFlow">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="./image/section4" alt="" />
+              <img src="./image/section4.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image/section4" alt="" />
+              <img src="./image/section4.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image/section4" alt="" />
+              <img src="./image/section4.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image/section4" alt="" />
+              <img src="./image/section4.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image/section4" alt="" />
+              <img src="./image/section4.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image/section4" alt="" />
+              <img src="./image/section4.png" alt="" />
             </div>
           </div>
         </div>
@@ -202,6 +202,19 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper(".bannerCon", {
+        //per view
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        //centered
+        centeredSlides: true,
+        //infinite loop
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+      var swiper2 = new Swiper(".bannerFlow", {
         //per view
         slidesPerView: "auto",
         spaceBetween: 20,
