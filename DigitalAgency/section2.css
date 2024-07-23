@@ -9,7 +9,7 @@
   /*내부 요소들의 간격을 띄울 때, gap 사용 VS margin 사용*/
   gap: 65px;
 
-  padding: 148px 104px 104px;
+  /* padding: 148px 104px 104px; */
   background-color: var(--color-light-bg);
 }
 .main .section2 h2 {

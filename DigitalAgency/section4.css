@@ -1,4 +1,10 @@
 .main .section4 {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   /*질문*/
   /* section2를 제외하고 section1부터 계속 반복되는 부분 */
   /* section2를 제외하고 추가 class를 주는 것 VS 현재와 같이 class를 늘리지 않고 반복되는 코드를 작성하는 것 */
@@ -20,6 +26,27 @@
   display: flex;
   flex-direction: column;
 }
+.main .section4 div {
+  display: flex;
+  gap: 22px;
+}
+.main .section4 div i {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-primary-bg);
+  border-radius: 50%;
+}
+.main .section4 div i:nth-of-type(1) {
+  color: var(--color-primary-bg);
+  transform: scaleX(-1);
+}
+.main .section4 div i:nth-of-type(2) {
+  background-color: var(--color-primary-bg);
+  color: var(--color-white);
+}
 .main .section4 h2::before {
   position: absolute;
   content: "";
@@ -27,4 +54,18 @@
   width: 72px;
   height: 5px;
   top: -30px;
+}
+.main .section4::before {
+  position: absolute;
+  content: "";
+  background: linear-gradient(to left bottom, #f76680, #57007b);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  bottom: -36px;
+  left: 900px;
+}
+
+.main .section4-banner {
+  background-color: var(--color-light-bg);
 }
