@@ -20,9 +20,9 @@
 }
 /* slider */
 /* 문제: 스크롤링하면 우측 카드 일부가 사라지는 현상 발생 */
-.swiper {
+.bannerCon {
   position: relative;
-  width: 100%; /*지정을 해야 slider의 크기 확보 가능*/
+  /*지정을 해야 slider의 크기 확보 가능*/
   height: 100%;
   padding-bottom: 50px;
   overflow: hidden;
