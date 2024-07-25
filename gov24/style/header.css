@@ -1,79 +1,38 @@
-/* CSS reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* 전체 설정 */
-:root {
-  --color-black: #222;
-  --color-dark-blue: #033075;
-  color: var(--color-black);
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-black);
-}
-ul {
-  padding-left: 0;
-}
-ul li {
-  list-style: none;
-}
-
 /* header 첫번째 부분 */
-
 .header-top {
+  background-color: var(--color-dark-blue);
+}
+
+.header-top .mw {
   display: flex;
   justify-content: space-between;
-
-  width: 100vw;
-
-  background-color: var(--color-dark-blue);
+  align-items: center;
   color: white;
-
   font: bold;
-}
-
-.header-top .top-bg {
-  display: flex;
-  justify-content: flex-start;
-
-  max-width: 1280px;
-  margin: 0 auto;
+  height: 36px;
 }
 
 .header-top .top-logo p {
   padding-left: 47px;
-  background: url("../image/eg_logo.png") no-repeat;
+  background: url("../assets/img/eg_logo.png") no-repeat left/contain;
 }
 .header-top .top-menu-pc > ul {
   display: flex;
-  /* justify-content: space-between;
-  width: 100%; */
 }
 
-.header-top .top-menu-pc > ul > li:nth-of-type(2)::before,
-.header-top .top-menu-pc > ul > li:nth-of-type(3)::before,
-.header-top .top-menu-pc > ul > li:nth-of-type(4)::before,
-.header-top .top-menu-pc > ul > li:nth-of-type(5)::before,
-.header-top .top-menu-pc > ul > li:nth-of-type(6)::before {
+.header-top .top-menu-pc > ul > li:not(:first-of-type)::before {
   content: "|";
 }
 
 /* header 두번째 부분 */
 .header-bottom {
-  position: fixed;
-
+  border-bottom: 1px solid var(--color-border);
+}
+.header-bottom .mw {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  width: 80%;
-  left: 50%;
-  transform: translateX(-50%);
+  height: 110px;
 }
 .header-bottom ul {
   display: flex;

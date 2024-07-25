@@ -1,0 +1,20 @@
+/* 전체 설정 */
+:root {
+  --color-black: #222;
+  --color-dark-blue: #033075;
+  color: var(--color-black);
+  --color-border: #e2e5eb;
+  --color-primary: #3382e9;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+/* header 공통 */
+.mw {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+}

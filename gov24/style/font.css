@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  font-weight: 700;
+  src: local("SpoqaHanSansNeo Bold"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2")
+      format("woff2"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff")
+      format("woff"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  font-weight: 500;
+  src: local("SpoqaHanSansNeo Medium"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2")
+      format("woff2"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff")
+      format("woff"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  font-weight: 400;
+  src: local("SpoqaHanSansNeo Regular"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2")
+      format("woff2"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff")
+      format("woff"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  font-weight: 300;
+  src: local("SpoqaHanSansNeo Light"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff2")
+      format("woff2"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff")
+      format("woff"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.otf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  font-weight: 100;
+  src: local("SpoqaHanSansNeo Thin"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff2")
+      format("woff2"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff")
+      format("woff"),
+    url("../assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.otf")
+      format("opentype");
+}
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "SpoqaHanSansNeo", sans-serif,
+    "Apple Gothic", "Apple SD Gothic Neo" !important;
+}
