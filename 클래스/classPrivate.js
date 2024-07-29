@@ -7,13 +7,16 @@ class Employee {
   constructor(part, name, price) {
     this.part = part;
     this.name = name;
-    if (price < 0 || isNaN(price)) {
-      this.#price = 0;
-    } else {
-      this.#price = price;
-    }
+    this.#price = price;
   }
 
+  set price(value) {
+    if (value < 0 || isNaN(value)) {
+      this.#price = 0;
+    } else {
+      this.#price = value;
+    }
+  }
   //get 함수
   get info() {
     const result = `[${this.part}] ${this.name}의 시급: ${this.#price}`;
