@@ -89,3 +89,29 @@ function logEvent(event) {
   console.log(event.target.className);
 }
 ```
+
+## 이벤트 처리 요소
+
+### 요소 선택
+
+- document.querySelector
+- createElement
+
+⇒ 단, class에 .포함
+
+### 자식 요소 선택
+
+- appendChild
+- firstElementChild
+- children
+
+### classList 추가/제거
+
+- classList.add
+- classList.remove
+
+⇒ 단, class에 .포함X
+
+### 이벤트 처리
+
+- addEventListener
