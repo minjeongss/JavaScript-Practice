@@ -82,7 +82,7 @@ container와 item에 작성하는 스타일 요소가 구분된다.
 - flex-flow
   - flex-direction+flex-wrap 한번에 지정하는 단축 속성
 - justify-content(가로축)
-  ![justify-content](.\image\flex.png)
+  ![justify-content](./image/flex.png)
 - align-items(수직축)
 - align-content
   - 아이템 행 2줄 이상인 경우 수직축 방향 정렬 결정
@@ -118,7 +118,7 @@ flex와 동일하게 container, item에 작성하는 스타일 요소가 구분�
 - 겹치는 구간: z-index로 처리
 
 - 행,단의 줄번호가 존재하여 이를 통해 셀 병합에 사용
-  ![grid](.\image\grid.png)
+  ![grid](./image/grid.png)
   단, 암시적 영역에선 줄 번호에 음수가 존재하지 않음
 
 ## 순서 정하기(z-index, order)
