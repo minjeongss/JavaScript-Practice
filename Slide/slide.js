@@ -82,7 +82,7 @@ const handlePagination = (item) => {
       handleNextMove();
     }
     handleNextStyle();
-  } else {
+  } else if (diffIndex > 0) {
     for (let i = 0; i < diffIndex; i++) {
       handlePrevMove();
     }
@@ -101,13 +101,13 @@ $prevBtn.addEventListener("click", handlePrevMove);
 $nextBtn.addEventListener("click", handleNextMove);
 
 //무한 슬라이드: 스타일 적용
-// $btns.forEach((item) => {
-//   if (item.classList.contains("prev")) {
-//     item.addEventListener("click", handlePrevStyle);
-//   } else {
-//     item.addEventListener("click", handleNextStyle);
-//   }
-// });
+$btns.forEach((item) => {
+  if (item.classList.contains("prev")) {
+    item.addEventListener("click", handlePrevStyle);
+  } else {
+    item.addEventListener("click", handleNextStyle);
+  }
+});
 
 //페이지네이션
 $dots.forEach((item) => {
