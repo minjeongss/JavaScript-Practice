@@ -24,7 +24,6 @@ img {
 }
 .btn,
 .slider-dot {
-  z-index: 999;
   position: absolute;
 }
 .btn {
@@ -38,7 +37,6 @@ img {
   right: -50px;
 }
 .slider-dot {
-  left: 50%;
   bottom: -30px;
 }
 .slider-dot > span {

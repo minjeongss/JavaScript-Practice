@@ -1,15 +1,19 @@
-const $btn = document.querySelectorAll(".btn");
+const $btns = document.querySelectorAll(".btn");
 const $prevBtn = document.querySelector(".prev");
 const $nextBtn = document.querySelector(".next");
+const $sliderDot = document.querySelector(".slider-dot");
+const $dots = $sliderDot.querySelectorAll("span");
 
 //TODO 이벤트 위임 방식으로 변경
-$btn.forEach((item) => {
+$btns.forEach((item) => {
   item.addEventListener("click", () => {
     const $sliderUl = document.querySelector(".slider-ul");
 
+    // $sliderUl.classList.add("move");
     $sliderUl.classList.remove("move");
 
     //TODO 비동기 처리 없이 애니메이션 효과가 나타나도록 변경
+    //TODO 이전 슬라이드 부분이 이동할 때 반짝이는 문제 수정 필요(애니메이션 요소 충돌이 원인)
     setTimeout(() => {
       $sliderUl.classList.add("move");
     }, 0);
@@ -45,4 +49,14 @@ $nextBtn.addEventListener("click", () => {
   currSlider.innerHTML = $slider[0].innerHTML;
   currSlider.classList.add("slider");
   $sliderUl.appendChild(currSlider);
+});
+
+//페이지네이션
+const handleList = (item) => {
+  //item.innerText
+};
+$dots.forEach((item) => {
+  item.addEventListener("click", () => {
+    handleList(item);
+  });
 });
