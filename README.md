@@ -7,8 +7,11 @@
 - [함수/Function](https://github.com/minjeongss/JavaScript-Practice/tree/main/Function)
 - [이벤트 처리/Event Handling](https://github.com/minjeongss/JavaScript-Practice/tree/main/EventHandling)
 - [클래스/Class](https://github.com/minjeongss/JavaScript-Practice/tree/main/Class)
+- [객체/Object](https://github.com/minjeongss/JavaScript-Practice/tree/main/Object)
+- [CSS](https://github.com/minjeongss/JavaScript-Practice/tree/main/CSS)
 
 ## 프로젝트
 
 - [정부24 클론코딩](https://github.com/minjeongss/JavaScript-Practice/tree/main/gov24)
 - [DigitalAgency 클론코딩](https://github.com/minjeongss/JavaScript-Practice/tree/main/DigitalAgency)
+- [슬라이드 제작기/Slide](https://github.com/minjeongss/JavaScript-Practice/tree/main/Slide)
