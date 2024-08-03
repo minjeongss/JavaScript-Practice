@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+.slide {
+  position: relative;
+
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+
+  border: 5px solid lightgray;
+}
+.slide-wrap {
+  border: 5px solid tomato;
+  /* overflow: hidden; */
+}
+.btn,
+.slider-dot {
+  z-index: 999;
+  position: absolute;
+}
+.btn {
+  top: 50%;
+  cursor: pointer;
+}
+.prev {
+  left: -50px;
+}
+.next {
+  right: -50px;
+}
+.slider-dot {
+  left: 50%;
+  bottom: -30px;
+}
+.slider-dot > span {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+  background-color: tomato;
+}
+.slider-dot > span:first-of-type {
+  background-color: black;
+  color: white;
+}
+.dot1 {
+  left: 0;
+}
+.dot2 {
+  left: 30px;
+}
+.dot3 {
+  left: 60px;
+}
+.dot4 {
+  left: 90px;
+}
+
+.slider-ul {
+  border: 2px solid slateblue;
+  display: flex;
+  width: 400%;
+}
+/* 버튼 누르면 화면 이동 */
+.slider-ul.move {
+  transform: translateX(calc(-25%));
+  transition: 0.3s;
+}
+
+.slider {
+  border: 5px solid red;
+  width: calc(100% / 4);
+}
+.slider:nth-of-type(3) ~ .slider {
+  display: none;
+}
+.slider > div {
+  position: relative;
+  padding-top: 35%;
+  overflow: hidden;
+}
+.slider > div > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slider > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider > div p {
+  z-index: 1;
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
