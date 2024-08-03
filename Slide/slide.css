@@ -51,7 +51,7 @@ img {
   border-radius: 50%;
   background-color: tomato;
 }
-.slider-dot > span:first-of-type {
+.slider-dot > span.on {
   background-color: black;
   color: white;
 }
@@ -74,8 +74,12 @@ img {
   width: 400%;
 }
 /* 버튼 누르면 화면 이동 */
-.slider-ul.move {
-  /* transform: translateX(calc(-25%)); */
+.slider-ul.moveFront {
+  transform: translateX(0);
+  transition: 0.3s;
+}
+.slider-ul.moveBack {
+  transform: translateX(0);
   transition: 0.3s;
 }
 
