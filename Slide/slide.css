@@ -24,6 +24,7 @@ img {
 }
 .btn,
 .slider-dot {
+  z-index: 100;
   position: absolute;
 }
 .btn {
@@ -74,7 +75,7 @@ img {
 }
 /* 버튼 누르면 화면 이동 */
 .slider-ul.move {
-  transform: translateX(calc(-25%));
+  /* transform: translateX(calc(-25%)); */
   transition: 0.3s;
 }
 
