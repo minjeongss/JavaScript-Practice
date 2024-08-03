@@ -33,8 +33,8 @@ $dots.forEach((item) => {
     }, 0);
   });
 });
-//무한 슬라이드: 이전 버튼
-$prevBtn.addEventListener("click", () => {
+
+const handlePrevMove = () => {
   //변화된 형태 확인을 위해 전역이 아닌 지역으로 선언
   const $sliderUl = document.querySelector(".slider-ul");
   const $slider = document.querySelectorAll(".slider");
@@ -47,10 +47,9 @@ $prevBtn.addEventListener("click", () => {
   currSlider.innerHTML = $slider[$slider.length - 1].innerHTML;
   currSlider.classList.add("slider");
   $sliderUl.prepend(currSlider);
-});
+};
 
-//무한 슬라이드: 다음 버튼
-$nextBtn.addEventListener("click", () => {
+const handleNextMove = () => {
   //변화된 형태 확인을 위해 전역이 아닌 지역으로 선언
   const $sliderUl = document.querySelector(".slider-ul");
   const $slider = document.querySelectorAll(".slider");
@@ -63,9 +62,8 @@ $nextBtn.addEventListener("click", () => {
   currSlider.innerHTML = $slider[0].innerHTML;
   currSlider.classList.add("slider");
   $sliderUl.appendChild(currSlider);
-});
+};
 
-//페이지네이션
 const handleList = (item) => {
   //sliderIndex, paginationIndex 차이
   //+: 2/1 prev처럼
@@ -74,37 +72,27 @@ const handleList = (item) => {
     document.querySelectorAll(".slider")[0].innerText
   );
   const $paginationIndex = Number(item.innerText);
-  const diffIndex = $sliderIndex - $paginationIndex;
-  //! 마이너스 될 수 있음
+  let diffIndex = $sliderIndex - $paginationIndex;
 
-  switch ($paginationIndex) {
-    case 1:
-      console.log("diff", diffIndex);
-      //2라면 2341 > 1234
-      //3이라면 3412 > 2341 > 1234
-      for (let i = 0; i < diffIndex; i++) {
-        const $slider = document.querySelectorAll(".slider");
-        const $sliderUl = document.querySelector(".slider-ul");
-        //삭제
-        $sliderUl.removeChild($sliderUl.lastElementChild);
-
-        //할당
-        let currSlider = document.createElement("li");
-        currSlider.innerHTML = $slider[$slider.length - 1].innerHTML;
-        currSlider.classList.add("slider");
-        $sliderUl.prepend(currSlider);
-
-        console.log(currSlider);
-      }
-      break;
-    case 2:
-      break;
-    case 3:
-      break;
-    case 4:
-      break;
+  if (diffIndex < 0) {
+    diffIndex = Math.abs(diffIndex);
+    for (let i = 0; i < diffIndex; i++) {
+      handleNextMove();
+    }
+  } else {
+    for (let i = 0; i < diffIndex; i++) {
+      handlePrevMove();
+    }
   }
 };
+
+//무한 슬라이드: 이전 버튼
+$prevBtn.addEventListener("click", handlePrevMove);
+
+//무한 슬라이드: 다음 버튼
+$nextBtn.addEventListener("click", handleNextMove);
+
+//페이지네이션
 $dots.forEach((item) => {
   item.addEventListener("click", () => {
     handleList(item);
