@@ -29,8 +29,12 @@ VanillaJS로 슬라이드를 제작한다.
 ## 진행 과정
 
 1. 데이터 처리
+
+- queue의 동작 원리와 동일하게, 슬라이드 카드 요소들을 활용
+
 2. 애니메이션 처리
-   - 이동
+   - 앞, 뒤 버튼 누르면 슬라이드 이동
+   - 페이지네이션 버튼 누르면 슬라이드 이동
 
 ## 해결 시도 과정: 무한 슬라이드
 
@@ -55,7 +59,7 @@ VanillaJS로 슬라이드를 제작한다.
 #### 3차 시도
 
 removeChild를 먼저 실행해, 요소의 개수를 유지한다.
-이때, 1차 시도에서 생각한 배열 처리 방식을 활용함
+이때, 1차 시도에서 생각한 배열 처리 방식을 활용했다.
 
 ### 이동
 
@@ -113,5 +117,32 @@ const handlePagination = (item) => {
       handlePrevMove();
     }
   }
+};
+```
+
+#### 해결
+
+handlePagination 안에서 for문을 활용해 handleNextMove()를 진행하자, 의도와 다르게 행동을 했다.
+
+해당 for문을 handleNextMove() 내로 이동하여, 이동해야 하는 diffIndex를 파라미터로 전달해 for문을 돌도록 진행했다.
+
+```js
+const handleNextMove = (changeCount) => {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const $sliderUl = document.querySelector(".slider-ul");
+  const $slider = document.querySelectorAll(".slider");
+
+  for (let i = 0; i < changeCount; i++) {
+    const firstElement = $sliderUl.firstElementChild.cloneNode(true);
+    console.log(firstElement);
+    $sliderUl.removeChild($sliderUl.firstElementChild);
+    $sliderUl.appendChild(firstElement);
+  }
+  $sliderUl.style.transition = "none";
+  $sliderUl.style.transform = "translateX(0)";
+
+  //이하 생략
 };
 ```
