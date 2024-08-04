@@ -44,15 +44,19 @@ VanillaJS로 슬라이드를 제작한다.
 
 유사 배열 객체 > 배열로 변환하여 연산한다.
 
-- prevBtn pop, unshift
-- nextBtn shift, push
+```
+- prevBtn:  pop, unshift
+- nextBtn:  shift, push
+```
 
 #### 2차 시도
 
 유사 배열 객체를 유지하여 연산한다.
 
-- prevBtn createElement > appendCHild
-- nextBtn createElement > prepend
+```
+- prevBtn: createElement > appendCHild
+- nextBtn: createElement > prepend
+```
 
 ➡️ 문제는 버튼을 누를수록 크기가 작아진다.
 
