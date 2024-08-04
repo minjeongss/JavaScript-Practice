@@ -3,6 +3,7 @@
 ## 참고 주소
 
 - [이벤트 버블링, 이벤트 캡처, 이벤트 위임](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
+- [이벤트 위임 장단점](https://ko.javascript.info/event-delegation)
 
 ## 이벤트 감지 방식
 
@@ -79,6 +80,8 @@ function logEvent(event) {
 
   동적으로 아이템을 추가하거나 아이템의 수가 많은 경우에 유용하게 사용할 수 있다.
 
+  즉, 상위 요소에 이벤트를 붙여 상위 요소의 모든 하위 요소 중 이벤트가 발생하는 요소가 있는지 감시한다. 만일, 특정 하위 요소에서 이벤트가 발생했다면 해당 이벤트 발생을 이벤트 버블링 방식을 통해 상위 요소에게 알리게 된다.
+
 ```js
 document.body.addEventListener("click", function (event) {
   if (event.target.matches("div")) {
@@ -94,6 +97,7 @@ function logEvent(event) {
 - 장단점
   - 장점: 많은 핸들러를 할당하지 않아도 되기에, 초기화가 단순하고 메모리가 절약된다
   - 단점
+    - 이벤트 위임을 사용하기 위해선 이벤트 버블링 발생이 필수적이나, 일부 이벤트에선 이벤트 버블링이 발생하지 않는다
     - 컨테이너 수준에 할당된 핸들러가 모든 하위 컨테이너에 발생하는 이벤트에 응답해야 하기에, CPU 작업 부하가 늘어날 수 있다
     - 단, 해당 부하는 큰 영향을 미치지 않아 실제로 고려하지는 않는다.
 
