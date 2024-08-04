@@ -4,6 +4,7 @@
 
 - [querySelectorAll](https://ko.javascript.info/searching-elements-dom)
 - [NodeList VS HTMLCollection](https://yung-developer.tistory.com/79)
+- [requestAnimationFrame](https://inpa.tistory.com/entry/%F0%9F%8C%90-requestAnimationFrame-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ## 목표
 

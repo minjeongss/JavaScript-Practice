@@ -18,7 +18,7 @@ img {
 }
 .slide-wrap {
   /* border: 5px solid tomato; */
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 10px;
 }
 .btn,
@@ -31,14 +31,15 @@ img {
   cursor: pointer;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: 10px;
   border: 0;
-  background-color: #7fa1c3;
-  color: lightgrey;
+  background-color: white;
+  color: #7fa1c3;
+  font-weight: 800;
 }
 .btn:hover {
   background-color: #6482ad;
-  color: lightgrey;
+  color: white;
 }
 .prev {
   left: -40px;
@@ -47,17 +48,17 @@ img {
   right: -40px;
 }
 .slider-dot {
+  display: relative;
   bottom: -30px;
-  left: calc(100% / 3);
+  width: 130px;
+  height: 10px;
+  left: calc(43%);
 }
 .slider-dot > span {
   position: absolute;
-  display: flex;
-  justify-content: center;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  /* background-color: tomato; */
   background-color: lightgrey;
 }
 .slider-dot > span.on {
@@ -115,4 +116,10 @@ img {
   /* background-color: black; */
   color: white;
   padding: 2rem;
+}
+
+@media (max-width: 800px) {
+  .btn {
+    display: none;
+  }
 }
