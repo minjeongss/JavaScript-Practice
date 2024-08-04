@@ -3,6 +3,7 @@
 ## 참고 주소
 
 - [querySelectorAll](https://ko.javascript.info/searching-elements-dom)
+- [NodeList VS HTMLCollection](https://yung-developer.tistory.com/79)
 
 ## 목표
 
@@ -54,6 +55,17 @@ VanillaJS로 슬라이드를 제작한다.
 
 removeChild를 먼저 실행해, 요소의 개수를 유지한다.
 이때, 1차 시도에서 생각한 배열 처리 방식을 활용함
+
+### 이동
+
+#### 문제
+
+- 슬라이드 위치와 애니메이션 간 충돌이 발생했다.
+- handlePrevMove-handleNextMove가 중복으로 호출되어 이동 거리 이상이 발생했다.
+
+#### 해결
+
+requestAnimationFrame() API를 사용하여, 모든 이동이 완료하면 다음 이동을 진행할 수 있도록 통제했다.
 
 ## 해결 시도 과정: 페이지네이션
 

@@ -11,11 +11,9 @@ img {
 }
 .slide {
   position: relative;
-
   width: 80%;
   max-width: 600px;
   margin: auto;
-
   border: 5px solid lightgray;
 }
 .slide-wrap {
@@ -44,10 +42,8 @@ img {
   position: absolute;
   display: flex;
   justify-content: center;
-
   width: 25px;
   height: 25px;
-
   border-radius: 50%;
   background-color: tomato;
 }
@@ -72,15 +68,8 @@ img {
   border: 2px solid slateblue;
   display: flex;
   width: 400%;
-}
-/* 버튼 누르면 화면 이동 */
-.slider-ul.moveFront {
   transform: translateX(-25%);
-  transition: 0.5s ease;
-}
-.slider-ul.moveBack {
-  transform: translateX(+25%);
-  transition: 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 .slider {
