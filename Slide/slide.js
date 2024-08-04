@@ -97,8 +97,12 @@ const updatePagination = () => {
   $dots[currentSliderIndex % $dots.length].classList.add("on");
 };
 
-$prevBtn.addEventListener("click", handlePrevMove);
-$nextBtn.addEventListener("click", handleNextMove);
+$prevBtn.addEventListener("click", () => {
+  handlePrevMove(1);
+});
+$nextBtn.addEventListener("click", () => {
+  handleNextMove(1);
+});
 
 $dots.forEach((item) => {
   item.addEventListener("click", () => {
