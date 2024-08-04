@@ -110,6 +110,4 @@ $dots.forEach((item) => {
   });
 });
 
-// 초기 설정
 handlePrevMove(1);
-updatePagination();

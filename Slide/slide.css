@@ -13,6 +13,7 @@ img {
   position: relative;
   width: 80%;
   max-width: 600px;
+  top: 30px;
   margin: auto;
   /* border: 5px solid lightgray; */
 }
@@ -88,7 +89,9 @@ img {
   transform: translateX(-25%);
   transition: transform 0.5s ease;
 }
-
+/* .slider-ul.hidden {
+  visibility: hidden;
+} */
 .slider {
   /* border: 5px solid red; */
   width: calc(100% / 4);

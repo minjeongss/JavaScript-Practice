@@ -36,6 +36,51 @@ VanillaJS로 슬라이드를 제작한다.
    - 앞, 뒤 버튼 누르면 슬라이드 이동
    - 페이지네이션 버튼 누르면 슬라이드 이동
 
+## 해결 시도 과정: 초기화
+
+### 방식
+
+애니메이션 적용을 위해 메인이 되는 슬라이드 카드의 인덱스가 0이 아닌 1로 구성을 하였다.
+
+#### 1차 시도
+
+초기화를 할 때, html의 경우 구성이 1>2>3>4로 이루어져 있기에 슬라이드 카드 중 2가 먼저 보이게 된다.
+하지만 우리가 희망하는 것은 슬라이드 카드 중 1이 먼저 보이게 되는 것이다.
+
+```js
+handlePrevMove(1);
+```
+
+➡️ 문제는 2에서 1로 이동하는 부분이 보인다.
+
+#### 2차 시도
+
+초기화를 할 때, 슬라이드를 앞으로 이동하고 난 후 hidden을 삭제하여 완성된 슬라이드를 보여준다.
+
+```js
+document.addEventListener("DOMContentLoaded", () => {
+  const $sliderUl = document.querySelector(".slider-ul");
+
+  // 슬라이더를 숨기기
+  $sliderUl.classList.add("hidden");
+
+  handlePrevMove(1);
+
+  // 슬라이더를 다시 보이기
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      // 슬라이더를 다시 보이기
+      $sliderUl.classList.remove("hidden");
+      $sliderUl.style.transition = "none";
+      $sliderUl.style.transform = "translateX(-25%)";
+      updatePagination(); // 초기 페이지네이션 상태 설정
+    });
+  });
+});
+```
+
+➡️ 문제는 버튼을 눌렀을 때 슬라이드 이동 자체가 진행되지 않는다.
+
 ## 해결 시도 과정: 무한 슬라이드
 
 ### 방식
