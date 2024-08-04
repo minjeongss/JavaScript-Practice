@@ -121,6 +121,36 @@ removeChild를 먼저 실행해, 요소의 개수를 유지한다.
 
 requestAnimationFrame() API를 사용하여, 모든 이동이 완료하면 다음 이동을 진행할 수 있도록 통제했다.
 
+- 첫 번째 requestAnimationFrame
+  - 다음 렌더링 사이클 전 적용
+  - transform: translateX(-50%), transition: none
+- 두 번째 requestAnimationFrame
+  - 첫 번째 변경이 렌더링 사이클 동안 적용된 후 실행
+  - transform: translateX(-25%), transition: transform 0.5s ease
+
+```js
+const handlePrevMove = (changeCount) => {
+  //생략
+  $sliderUl.style.transition = "none";
+  $sliderUl.style.transform = "translateX(-50%)";
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      $sliderUl.style.transition = "transform 0.5s ease";
+      $sliderUl.style.transform = "translateX(-25%)";
+      $sliderUl.addEventListener(
+        "transitionend",
+        () => {
+          isAnimating = false;
+          updatePagination();
+        },
+        { once: true }
+      );
+    });
+  });
+};
+```
+
 ## 해결 시도 과정: 페이지네이션
 
 ### 방식
