@@ -6,17 +6,19 @@ const $dots = $sliderDot.querySelectorAll("span");
 
 let isAnimating = false; // 애니메이션 진행중 여부
 
-const handlePrevMove = () => {
+const handlePrevMove = (changeCount) => {
   if (isAnimating) return;
   isAnimating = true;
 
   const $sliderUl = document.querySelector(".slider-ul");
   const $slider = document.querySelectorAll(".slider");
 
-  const lastElement = $sliderUl.lastElementChild.cloneNode(true);
-  console.log(lastElement);
-  $sliderUl.removeChild($sliderUl.lastElementChild);
-  $sliderUl.insertBefore(lastElement, $sliderUl.firstElementChild);
+  for (let i = 0; i < changeCount; i++) {
+    const lastElement = $sliderUl.lastElementChild.cloneNode(true);
+    console.log(lastElement);
+    $sliderUl.removeChild($sliderUl.lastElementChild);
+    $sliderUl.insertBefore(lastElement, $sliderUl.firstElementChild);
+  }
   $sliderUl.style.transition = "none";
   $sliderUl.style.transform = "translateX(-50%)";
 
@@ -36,17 +38,19 @@ const handlePrevMove = () => {
   });
 };
 
-const handleNextMove = () => {
+const handleNextMove = (changeCount) => {
   if (isAnimating) return;
   isAnimating = true;
 
   const $sliderUl = document.querySelector(".slider-ul");
   const $slider = document.querySelectorAll(".slider");
 
-  const firstElement = $sliderUl.firstElementChild.cloneNode(true);
-  console.log(firstElement);
-  $sliderUl.removeChild($sliderUl.firstElementChild);
-  $sliderUl.appendChild(firstElement);
+  for (let i = 0; i < changeCount; i++) {
+    const firstElement = $sliderUl.firstElementChild.cloneNode(true);
+    console.log(firstElement);
+    $sliderUl.removeChild($sliderUl.firstElementChild);
+    $sliderUl.appendChild(firstElement);
+  }
   $sliderUl.style.transition = "none";
   $sliderUl.style.transform = "translateX(0)";
 
@@ -80,13 +84,9 @@ const handlePagination = (item) => {
   console.log(diffIndex);
   if (diffIndex < 0) {
     diffIndex = Math.abs(diffIndex);
-    for (let i = 0; i < diffIndex; i++) {
-      handleNextMove();
-    }
+    handleNextMove(diffIndex);
   } else if (diffIndex > 0) {
-    for (let i = 0; i < diffIndex; i++) {
-      handlePrevMove();
-    }
+    handlePrevMove(diffIndex);
   }
 };
 
@@ -107,5 +107,5 @@ $dots.forEach((item) => {
 });
 
 // 초기 설정
-handlePrevMove();
+handlePrevMove(1);
 updatePagination();
