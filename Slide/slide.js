@@ -104,10 +104,9 @@ $nextBtn.addEventListener("click", () => {
   handleNextMove(1);
 });
 
-$dots.forEach((item) => {
-  item.addEventListener("click", () => {
-    handlePagination(item);
-  });
+$sliderDot.addEventListener("click", (e) => {
+  let destinationDot = e.target;
+  handlePagination(destinationDot);
 });
 
 handlePrevMove(1);

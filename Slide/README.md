@@ -36,6 +36,28 @@ VanillaJS로 슬라이드를 제작한다.
    - 앞, 뒤 버튼 누르면 슬라이드 이동
    - 페이지네이션 버튼 누르면 슬라이드 이동
 
+## 해결 시도 과정: 이벤트 위임
+
+### 모든 하위 요소에 이벤트 등록
+
+```js
+$dots.forEach((item) => {
+  item.addEventListener("click", () => {
+    //handlePagination(item);
+    console.log("HH", item);
+  });
+});
+```
+
+### 하나의 상위 요소에 이벤트 등록(이벤트 위임)
+
+```js
+$sliderDot.addEventListener("click", (e) => {
+  let destinationDot = e.target;
+  handlePagination(destinationDot);
+});
+```
+
 ## 해결 시도 과정: 초기화
 
 ### 방식
