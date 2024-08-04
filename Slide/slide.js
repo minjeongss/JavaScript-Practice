@@ -14,6 +14,7 @@ const handlePrevMove = () => {
   const $slider = document.querySelectorAll(".slider");
 
   const lastElement = $sliderUl.lastElementChild.cloneNode(true);
+  console.log(lastElement);
   $sliderUl.removeChild($sliderUl.lastElementChild);
   $sliderUl.insertBefore(lastElement, $sliderUl.firstElementChild);
   $sliderUl.style.transition = "none";
@@ -43,6 +44,7 @@ const handleNextMove = () => {
   const $slider = document.querySelectorAll(".slider");
 
   const firstElement = $sliderUl.firstElementChild.cloneNode(true);
+  console.log(firstElement);
   $sliderUl.removeChild($sliderUl.firstElementChild);
   $sliderUl.appendChild(firstElement);
   $sliderUl.style.transition = "none";
@@ -66,8 +68,9 @@ const handleNextMove = () => {
 
 const handlePageIndex = (item) => {
   const $slider = document.querySelectorAll(".slider");
-  const $sliderIndex = Number($slider[0].innerText);
+  const $sliderIndex = Number($slider[1].innerText);
   const $paginationIndex = Number(item.innerText);
+  console.log("slider", $sliderIndex, "   /pagination", $paginationIndex);
   let diffIndex = $sliderIndex - $paginationIndex;
   return diffIndex;
 };
@@ -76,6 +79,7 @@ const handlePagination = (item) => {
   let diffIndex = handlePageIndex(item);
   if (diffIndex < 0) {
     diffIndex = Math.abs(diffIndex);
+    console.log(diffIndex);
     for (let i = 0; i < diffIndex; i++) {
       handleNextMove();
     }
@@ -102,5 +106,6 @@ $dots.forEach((item) => {
   });
 });
 
-// 초기 페이지네이션 상태 설정
+// 초기 설정
 updatePagination();
+handlePrevMove();

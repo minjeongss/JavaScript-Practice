@@ -91,3 +91,26 @@ $dots.forEach((item) => {
 ```js
 const $dots = $sliderDot.querySelectorAll("span");
 ```
+
+### 이동
+
+#### 문제
+
+2칸 이상 이동이 불가능하다. 1칸 이동만 가능하다.
+
+```js
+const handlePagination = (item) => {
+  let diffIndex = handlePageIndex(item);
+  if (diffIndex < 0) {
+    diffIndex = Math.abs(diffIndex);
+    console.log(diffIndex);
+    for (let i = 0; i < diffIndex; i++) {
+      handleNextMove();
+    }
+  } else if (diffIndex > 0) {
+    for (let i = 0; i < diffIndex; i++) {
+      handlePrevMove();
+    }
+  }
+};
+```
