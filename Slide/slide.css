@@ -14,11 +14,12 @@ img {
   width: 80%;
   max-width: 600px;
   margin: auto;
-  border: 5px solid lightgray;
+  /* border: 5px solid lightgray; */
 }
 .slide-wrap {
-  border: 5px solid tomato;
-  /* overflow: hidden; */
+  /* border: 5px solid tomato; */
+  overflow: hidden;
+  border-radius: 10px;
 }
 .btn,
 .slider-dot {
@@ -28,28 +29,43 @@ img {
 .btn {
   top: 50%;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #7fa1c3;
+  color: lightgrey;
+}
+.btn:hover {
+  background-color: #6482ad;
+  color: lightgrey;
 }
 .prev {
-  left: -50px;
+  left: -40px;
 }
 .next {
-  right: -50px;
+  right: -40px;
 }
 .slider-dot {
   bottom: -30px;
+  left: calc(100% / 3);
 }
 .slider-dot > span {
   position: absolute;
   display: flex;
   justify-content: center;
-  width: 25px;
-  height: 25px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: tomato;
+  /* background-color: tomato; */
+  background-color: lightgrey;
 }
 .slider-dot > span.on {
-  background-color: black;
-  color: white;
+  background-color: #7fa1c3;
+}
+.slider-dot > span:hover {
+  cursor: pointer;
+  background-color: #6482ad;
 }
 .dot1 {
   left: 0;
@@ -65,7 +81,7 @@ img {
 }
 
 .slider-ul {
-  border: 2px solid slateblue;
+  /* border: 2px solid slateblue; */
   display: flex;
   width: 400%;
   transform: translateX(-25%);
@@ -73,7 +89,7 @@ img {
 }
 
 .slider {
-  border: 5px solid red;
+  /* border: 5px solid red; */
   width: calc(100% / 4);
 }
 .slider:nth-of-type(3) ~ .slider {
@@ -96,7 +112,7 @@ img {
 }
 .slider > div p {
   z-index: 1;
-  background-color: black;
+  /* background-color: black; */
   color: white;
   padding: 2rem;
 }
