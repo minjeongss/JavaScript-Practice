@@ -14,10 +14,10 @@ const handlePrevMove = (changeCount) => {
   const $slider = document.querySelectorAll(".slider");
 
   for (let i = 0; i < changeCount; i++) {
-    const lastElement = $sliderUl.lastElementChild.cloneNode(true);
-    console.log(lastElement);
-    $sliderUl.removeChild($sliderUl.lastElementChild);
-    $sliderUl.insertBefore(lastElement, $sliderUl.firstElementChild);
+    $sliderUl.insertBefore(
+      $sliderUl.lastElementChild,
+      $sliderUl.firstElementChild
+    );
   }
   $sliderUl.style.transition = "none";
   $sliderUl.style.transform = "translateX(-50%)";
@@ -46,10 +46,7 @@ const handleNextMove = (changeCount) => {
   const $slider = document.querySelectorAll(".slider");
 
   for (let i = 0; i < changeCount; i++) {
-    const firstElement = $sliderUl.firstElementChild.cloneNode(true);
-    console.log(firstElement);
-    $sliderUl.removeChild($sliderUl.firstElementChild);
-    $sliderUl.appendChild(firstElement);
+    $sliderUl.appendChild($sliderUl.firstElementChild);
   }
   $sliderUl.style.transition = "none";
   $sliderUl.style.transform = "translateX(0)";
