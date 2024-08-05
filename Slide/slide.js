@@ -7,6 +7,10 @@ const $sliderUl = document.querySelector(".slider-ul");
 
 let isAnimating = false; // 애니메이션 진행중 여부
 
+const handleSecondMoveStyle = () => {
+  $sliderUl.style.transition = "transform 0.5s ease";
+  $sliderUl.style.transform = "translateX(-25%)";
+};
 const handlePrevMove = (changeCount) => {
   if (isAnimating) return;
   isAnimating = true;
@@ -22,8 +26,7 @@ const handlePrevMove = (changeCount) => {
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      $sliderUl.style.transition = "transform 0.5s ease";
-      $sliderUl.style.transform = "translateX(-25%)";
+      handleSecondMoveStyle();
       $sliderUl.addEventListener(
         "transitionend",
         () => {
@@ -48,8 +51,7 @@ const handleNextMove = (changeCount) => {
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      $sliderUl.style.transition = "transform 0.5s ease";
-      $sliderUl.style.transform = "translateX(-25%)";
+      handleSecondMoveStyle();
       $sliderUl.addEventListener(
         "transitionend",
         () => {
