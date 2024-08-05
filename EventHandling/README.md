@@ -4,6 +4,31 @@
 
 - [이벤트 버블링, 이벤트 캡처, 이벤트 위임](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
 - [이벤트 위임 장단점](https://ko.javascript.info/event-delegation)
+- [requestAnimationFrame](https://inpa.tistory.com/entry/%F0%9F%8C%90-requestAnimationFrame-%EA%B0%80%EC%9D%B4%EB%93%9C)
+
+## 이벤트 할당 방법
+
+### setInterval
+
+- 지연 옵션은 콜백이 반복적으로 실행될 시간을 정하지만, 프레임을 신경 쓰지 않고 동작한다
+- 타이머 함수는 프레임 시작 시간에 맞춰 실행됨을 보장하지 못한다
+
+```js
+setInterval(function animation() {}, 1000);
+```
+
+### requestAnimationFrame(rAF)
+
+- 프레임 시작 시 실행되도록 보장을 해준다
+
+```js
+const animation = () => {
+  if(재귀 조건){
+    requestAnimationFrame(animation);
+  }
+};
+requestAnimationFrame(animation);
+```
 
 ## 이벤트 감지 방식
 
