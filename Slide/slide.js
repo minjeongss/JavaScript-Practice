@@ -3,15 +3,13 @@ const $prevBtn = document.querySelector(".prev");
 const $nextBtn = document.querySelector(".next");
 const $sliderDot = document.querySelector(".slider-dot");
 const $dots = $sliderDot.querySelectorAll("span");
+const $sliderUl = document.querySelector(".slider-ul");
 
 let isAnimating = false; // 애니메이션 진행중 여부
 
 const handlePrevMove = (changeCount) => {
   if (isAnimating) return;
   isAnimating = true;
-
-  const $sliderUl = document.querySelector(".slider-ul");
-  const $slider = document.querySelectorAll(".slider");
 
   for (let i = 0; i < changeCount; i++) {
     $sliderUl.insertBefore(
@@ -41,9 +39,6 @@ const handlePrevMove = (changeCount) => {
 const handleNextMove = (changeCount) => {
   if (isAnimating) return;
   isAnimating = true;
-
-  const $sliderUl = document.querySelector(".slider-ul");
-  const $slider = document.querySelectorAll(".slider");
 
   for (let i = 0; i < changeCount; i++) {
     $sliderUl.appendChild($sliderUl.firstElementChild);
@@ -107,7 +102,6 @@ $sliderDot.addEventListener("click", (e) => {
 });
 
 const init = () => {
-  const $sliderUl = document.querySelector(".slider-ul");
   $sliderUl.prepend($sliderUl.lastElementChild); //! 화면 반짝이는 문제 여전히 존재
   updatePagination();
 };
