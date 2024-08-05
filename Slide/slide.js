@@ -62,7 +62,7 @@ const handleNextMove = (changeCount) => {
   });
 };
 
-const handlePageIndex = (item) => {
+const getIndexDiff = (item) => {
   const $slider = document.querySelectorAll(".slider");
   const $sliderIndex = Number($slider[1].innerText);
   const $paginationIndex = Number(item.classList[0][3]);
@@ -72,7 +72,7 @@ const handlePageIndex = (item) => {
 };
 
 const handlePagination = (item) => {
-  let diffIndex = handlePageIndex(item);
+  let diffIndex = getIndexDiff(item);
   console.log(diffIndex);
   if (diffIndex < 0) {
     diffIndex = Math.abs(diffIndex);
