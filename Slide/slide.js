@@ -109,4 +109,10 @@ $sliderDot.addEventListener("click", (e) => {
   handlePagination(destinationDot);
 });
 
-handlePrevMove(1);
+const init = () => {
+  const $sliderUl = document.querySelector(".slider-ul");
+  $sliderUl.prepend($sliderUl.lastElementChild); //! 화면 반짝이는 문제 여전히 존재
+  updatePagination();
+};
+
+init();
