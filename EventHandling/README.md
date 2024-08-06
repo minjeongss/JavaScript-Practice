@@ -151,3 +151,26 @@ function logEvent(event) {
 ### 이벤트 처리
 
 - addEventListener
+
+## 이벤트: Scroll
+
+### 요소
+
+- scrollHeight: 전체 컨텐츠의 길이
+- scrollTop: 최상단에서 현재 보이는 화면 직전까지의 길이
+- clientHeight: 현재 보이는 화면의 길이
+
+### 요소 활용
+
+#### 무한 스크롤 UI
+
+스크롤을 진행하며 전체 화면의 마지막에 도달하게 되었을 때, `newLoading()`을 실행하도록 한다.
+
+```js
+window.addEventListener("scroll", () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  if (scrollTop + clientHeight >= scrollHeight - 20) {
+    newLoading();
+  }
+});
+```
