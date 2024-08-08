@@ -11,17 +11,14 @@
 
 ### 동기
 
-각 함수와 코드들이 위에서 아래로 차례대로 동작하는 방식이다.
-
-간단하고 직관적이지만, 작업이 오래 걸리면 다음 응답이 무한 대기를 하여 성능에 악영향을 미친다.
+- 각 함수와 코드들이 위에서 아래로 차례대로 동작하는 방식이다.
+- 간단하고 직관적이지만, 작업이 오래 걸리면 다음 응답이 무한 대기를 하여 성능에 악영향을 미친다.
 
 ### 비동기
 
 #### 정의
 
-여러 작업을 동시에 처리하는 방식이다.
-
-메인 스레드가 작업을 다른 곳에 보내 처리되게 하고, 해당 작업이 완료되면 콜백 함수를 받아 실행하게 된다.
+여러 작업을 동시에 처리하는 방식이다. 메인 스레드가 작업을 다른 곳에 보내 처리되게 하고, 해당 작업이 완료되면 콜백 함수를 받아 실행하게 된다.
 
 즉, 작업을 백그라운드에 요청해 처리되게 하여 여러 작업을 동시에 처리하게 한다.
 
@@ -123,11 +120,35 @@ getData()
 ```js
 const getData = async () => {
   try {
-    const response = await fetct("");
+    const response = await fetch("");
     if (!response.ok) throw new Error("ERROR");
     console.log(response);
   } catch (error) {
     console.error(error);
   }
+};
+```
+
+사용 범위는 다음과 같다.
+
+만일 fetch를 최상단에서 진행하고 여러 함수를 거쳐 해당 데이터를 사용하는 경우, 다른 함수보다 데이터를 먼저 받아야 한다면 모든 경로에서 async-await을 사용해야 한다.
+
+- getData() > initAmount() > init()까지 async-await 사용이 이어짐
+- 이때, initCurrency()보다 initAmount()에서 설정이 먼저 이루어져야 함
+
+```js
+const getData = async () => {
+  const url = `https://open.exchangerate-api.com/v6/latest`;
+  const response = await fetch(url);
+  const json = await response.json();
+  return json;
+};
+const initAmount = async () => {
+  const data = await getData();
+};
+const initCurrency = () => {};
+const init = async () => {
+  await initAmount();
+  initCurrency();
 };
 ```
