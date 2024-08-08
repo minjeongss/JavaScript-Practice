@@ -1,28 +1,39 @@
-const $localInner = document.querySelector(".localInner");
 const $addLocalBtn = document.querySelector(".addLocalBtn");
-
-let list = [];
+const $delLocalBtn = document.querySelector(".delLocalBtn");
+const $confirmLocalBtn = document.querySelector(".confirmLocalBtn");
+let localList = [];
 const saveToLocal = () => {
-  list.push({ id: 0, name: "test1" });
-  localStorage.setItem("test1", JSON.stringify(list));
+  localList.push({ id: 0, name: "test1" });
+  localStorage.setItem("test1", JSON.stringify(localList));
+};
+const deleteToLocal = () => {
+  localStorage.removeItem("test1");
+  localList = [];
 };
 const getFromLocal = () => {
   const prevList = JSON.parse(localStorage.getItem("test1"));
-  console.log(prevList);
   if (prevList) {
-    list.push(prevList);
+    localList = prevList;
+  } else {
+    localList = [];
   }
 };
 
 $addLocalBtn.addEventListener("click", () => {
   saveToLocal();
 });
+$delLocalBtn.addEventListener("click", () => {
+  deleteToLocal();
+});
+$confirmLocalBtn.addEventListener("click", () => {
+  alert(JSON.stringify(localList));
+});
 
 //초기화
-const init = () => {
+const initLocal = () => {
   getFromLocal();
 };
-init();
+initLocal();
 
 /**
  * 상황
