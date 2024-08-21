@@ -1,5 +1,10 @@
 # 복사에 대해 분석해보자! 🤖
 
+## 실습
+
+- [copy.js: 참조, 얕은 복사, 깊은 복사 비교](https://github.com/minjeongss/JavaScript-Practice/blob/main/Copy/copy.js)
+- [copy-object.js: 객체 내부의 원시 타입, 객체 타입 비교](https://github.com/minjeongss/JavaScript-Practice/blob/main/Copy/copy-object.js)
+
 ## 데이터 타입 구성
 
 - 원시 타입: Number, String, Boolean, undefined, null, Symbol
@@ -11,14 +16,14 @@
 - 객체 타입: 참조값(메모리 주소) 비교
 
 - 객체 내부 원시 타입: 값 자체 비교
-- 객체 내부 프로퍼티 객체: 참조값(메모리 주소) 비교
+- 객체 내부 객체 타입: 참조값(메모리 주소) 비교
 
 ## 복사 종류
 
 - 얕은 복사(Shallow Copy)
 - 깊은 복사(Deep copy)
 
-### 얕은 복사
+### 참조
 
 동일한 메모리 주소를 참조하는 할당 방식이다.
 
@@ -26,18 +31,14 @@
 const obj1 = obj2;
 ```
 
-### 깊은 복사
+```js
+console.log(obj1 === obj2); //true
+```
+
+### 얕은 복사
 
 다른 메모리 주소를 가지도록 하는 할당 방식이다.
-
-이때, 할당하는 객체가 1차원 객체인지 2차원 이상 객체인지에 따라 깊은 복사인지의 여부가 결정된다.
-
-1차원 객체인 경우, 객체 전부가 깊은 복사를 진행한다. 하지만 2차원 이상 객체인 경우, 객체 중 1차원 객체만 깊은 복사를 진행하고 2차원 이상 객체는 얕은 복사를 진행한다.
-
-2차원 이상 객체 역시 깊은 복사를 하고 싶은 경우, 직접 값을 할당하거나 JSON,parse, JSON,stringfy를 활용하여 할당해야 한다.
-
-- 1차원 객체 복사
-  - 이때, 2차원 이상 객체의 경우 일부만 깊은 복사를 진행한다.
+단, 객체 내부의 객체는 동일한 메모리 주소를 참조하게 된다.
 
 ```js
 const obj1 = { ...obj2 };
@@ -45,10 +46,21 @@ const obj1 = object.assign({}, obj2);
 const obj1 = Array.from(obj2);
 ```
 
-- 2차원 객체 복사
+```js
+console.log(obj1 === obj2); //false
+```
+
+### 깊은 복사
+
+다른 메모리 주소를 가지도록 하는 할당 방식이다.
+단, 객체 내부의 객체는 다른 메모리 주소를 참조하게 된다.
 
 ```js
 const obj1 = JSON.parse(JSON.stringfy(obj2));
+```
+
+```js
+console.log(obj1 === obj2); //false
 ```
 
 ### 객체 내부 얕은 복사 VS 깊은 복사
