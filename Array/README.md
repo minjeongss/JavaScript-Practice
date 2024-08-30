@@ -57,7 +57,8 @@ let arrayStr2: String[] = array
   - forEach: X
   - map: X
 - 성능
+  - for: 빠름
   - forEach: 느림
-  - map: 빠름
+  - map: 더 느림
 
 즉, forEach는 단순 반복문을 위한 용도이고 map은 기존의 배열을 바탕으로 새로운 배열을 생성하기 위한 용도이다.
