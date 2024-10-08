@@ -19,7 +19,10 @@ setInterval(function animation() {}, 1000);
 
 ### requestAnimationFrame(rAF)
 
-- 프레임 시작 시 실행되도록 보장을 해준다
+- 브라우저에서 다음 repaint가 일어날 때 콜백이 호출되도록 설정한다
+- 무제한 호출이 아닌 1초에 60번 동작하도록 제한한다(브라우저에 표시 적절한 주사율)
+- 영상이나 특정 DOM이 움직이는 애니메이션을 만들기에 최적화되어 있다
+- setInterval과 달리, 백그라운드에선 호출되지 않고 대기하기에 CPU 전력 소모가 적다
 
 ```js
 const animation = () => {
