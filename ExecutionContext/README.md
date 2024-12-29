@@ -1,5 +1,10 @@
 # 실행 컨텍스트(execution context)에 대해 분석해보자! 📑
 
+## 참고 주소
+
+- [실행 컨텍스트 구성요소](https://github.com/baeharam/Must-Know-About-Frontend/blob/main/Notes/javascript/execution-context.md)
+- [Variable Environment VS Lexical Environment](https://velog.io/@kados22/FE-%EA%B8%B0%EC%88%A0-%EB%A9%B4%EC%A0%91-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
+
 ## 실행 컨텍스트란
 
 식별자(변수, 함수, 클래스)를 등록하고 관리하는 스코프와 코드 실행 순서를 관리하는 영역이다. 이때, 식별자와 스코프는 렉시컬 환경으로 관리한다.
