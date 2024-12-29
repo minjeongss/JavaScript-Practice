@@ -11,6 +11,7 @@
 - [CSS](https://github.com/minjeongss/JavaScript-Practice/tree/main/CSS)
 - [Storage-Cookie](https://github.com/minjeongss/JavaScript-Practice/tree/main/Storage)
 - [Dataset](https://github.com/minjeongss/JavaScript-Practice/tree/main/Dataset)
+- [실행 컨텍스트/Execution Context](https://github.com/minjeongss/JavaScript-Practice/tree/main/ExecutionContext)
 
 ## 프로젝트
 
